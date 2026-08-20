@@ -1,9 +1,11 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
   "sap/ui/core/syncStyleClass",
-  "sap/ui/model/json/JSONModel"
+  "sap/ui/model/json/JSONModel",
+  "sap/ui/model/Filter",
+  "sap/ui/model/FilterOperator"
 ],
-  function (Controller, syncStyleClass, JSONModel) {
+  function (Controller, syncStyleClass, JSONModel, Filter, FilterOperator) {
     "use strict";
 
     return Controller.extend("djp.training.exc.controller.Overview", {
@@ -34,6 +36,18 @@ sap.ui.define([
       onCustomerChange: function (oEvent) {
         var oBindingContext = oEvent.getParameter("listItem").getBindingContext();
         this.byId("bookingTable").setBindingContext(oBindingContext);
+      },
+
+      onFilterCustomers: function (oEvent) {
+        var aFilter = [];
+        var sQuery = oEvent.getParameter("query");
+        if (sQuery && sQuery.length > 0) {
+          aFilter.push(new Filter("CustomerName", FilterOperator.Contains, sQuery));
+        }
+
+        var oTable = this.byId("customerTable");
+        var oBinding = oTable.getBinding("items");
+        oBinding.filter(aFilter);
       }
 
     });
