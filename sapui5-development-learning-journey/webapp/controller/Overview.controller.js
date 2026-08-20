@@ -4,7 +4,8 @@ sap.ui.define([
   function (Controller) {
     "use strict";
 
-    return Controller.extend("djp.training.exc.controller.App", {
+    return Controller.extend("djp.training.exc.controller.Overview", {
+
 
     });
   });
