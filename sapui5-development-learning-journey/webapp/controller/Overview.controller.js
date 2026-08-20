@@ -49,6 +49,5 @@ sap.ui.define([
         var oBinding = oTable.getBinding("items");
         oBinding.filter(aFilter);
       }
-
     });
   });
