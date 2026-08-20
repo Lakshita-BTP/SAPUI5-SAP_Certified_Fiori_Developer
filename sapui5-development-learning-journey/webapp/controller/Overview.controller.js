@@ -1,11 +1,17 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
-  "sap/ui/core/syncStyleClass"
+  "sap/ui/core/syncStyleClass",
+  "sap/ui/model/json/JSONModel"
 ],
-  function (Controller, syncStyleClass) {
+  function (Controller, syncStyleClass, JSONModel) {
     "use strict";
 
     return Controller.extend("djp.training.exc.controller.Overview", {
+
+      onInit: function () {
+        var oModel = new JSONModel();
+        this.getView().setModel(oModel, "customer");
+      },
 
       onSave: function () {
         if (!this.pDialog) {
