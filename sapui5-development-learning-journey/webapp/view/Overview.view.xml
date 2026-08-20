@@ -97,7 +97,8 @@
                                                 type: 'sap.ui.model.type.Currency',
                                                 formatOptions: {showMeasure: false} }" 
                                       unit="{ForeignCurrency}"/>
-                        <Text text="{IsCancelled}"/>
+                        <core:Icon src="{= ${IsCancelled} === 'X' ? 'sap-icon://cancel' : 'sap-icon://accept' }"
+                                   tooltip="{= ${IsCancelled} === 'X' ? 'cancelled' : 'not cancelled' }"/>
                     </cells>
                     </ColumnListItem>
                 </items>
