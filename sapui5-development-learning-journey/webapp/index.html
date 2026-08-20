@@ -20,11 +20,11 @@
         src="resources/sap-ui-core.js" 
         data-sap-ui-theme="sap_fiori_3"
         data-sap-ui-libs="sap.m" 
-        data-sap-ui-compatVersion="edge">
-    </script>
-    <script>
-        var oText = new sap.m.Text({text: "Hello World"});
-        oText.placeAt("content");
+        data-sap-ui-compatVersion="edge"
+        
+        data-sap-ui-async="true"
+        data-sap-ui-onInit="module:djp/training/exc/index"
+        data-sap-ui-resourceroots='{"djp.training.exc": "./"}'>
     </script>
 </head>
 
