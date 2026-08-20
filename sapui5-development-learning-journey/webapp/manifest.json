@@ -1,7 +1,7 @@
 {
     "_version": "1.28.0",
     "sap.app": {
-        "id": "<...>",
+        "id": "djp.training.exc",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -91,7 +91,7 @@
                 "routerClass": "sap.m.routing.Router",
                 "viewType": "XML",
                 "async": true,
-                "viewPath": "sap.training.exc.view",
+                "viewPath": "djp.training.exc.view",
                 "controlAggregation": "pages",
                 "controlId": "<...>"
             },
@@ -99,7 +99,7 @@
             "targets": {}
         },
         "rootView": {
-            "viewName": "<...>",
+            "viewName": "djp.training.exc.view.App",
             "type": "XML",
             "async": true,
             "id": "App"

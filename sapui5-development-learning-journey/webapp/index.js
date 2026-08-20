@@ -1,13 +1,15 @@
-sap.ui.define(["sap/ui/core/mvc/XMLView"], function (XMLView) {
+sap.ui.define(["sap/ui/core/ComponentContainer"], function (ComponentContainer) {
     "use strict";
 
-    XMLView.create({
-        id: "App",
-        viewName: "djp.training.exc.view.App"
-    }).then(function (oView) {
-        oView.placeAt("content");
+    var oContainer = new ComponentContainer({
+        id: "container",
+        name: "djp.training.exc",
+        manifest: true,
+        async: true,
+        settings: {
+            id: "djp.training.exc"
+        }
     });
+    oContainer.placeAt("content");
 
 });
-
-
